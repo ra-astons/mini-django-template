@@ -1,0 +1,60 @@
+# MINIMAL CONFIGURATION
+# ~~~~~~~~~~~~~~~~~~~~~
+#
+# Visit http://localhost:8000/ to access the Django dev server and
+# http://localhost:3000/ to access the Webpack dev server.
+#
+# Visit http://localhost:8025 to access the project's fake mail box.
+#
+# version: '3.8'
+# services:
+#   backend:
+#     ports:
+#       - 127.0.0.1:8000:8000
+#   frontend:
+#     ports:
+#       - 127.0.0.1:3000:3000
+#   mailhog:
+#     ports:
+#       - 127.0.0.1:8025:8025
+
+# PONTSUN CONFIGURATION
+# ~~~~~~~~~~~~~~~~~~~~~
+#
+# Set up pontsun (https://github.com/liip/pontsun) and start it. Then visit
+# https://djangotemplate.docker.test/ to access the Webpack dev server.
+#
+# Visit https://djangotemplate-mail.docker.test/ to access the project's fake mail box.
+#
+# version: '3.8'
+#
+# services:
+#   backend:
+#     environment:
+#       SSH_AUTH_SOCK: /ssh-agent
+#     env_file: .env.dev
+#     volumes:
+#       - $SSH_AUTH_SOCK:/ssh-agent
+#     networks:
+#       - default
+#       - pontsun
+#     labels:
+#       - 'traefik.enable=true'
+#       - 'traefik.docker.network=pontsun'
+#       - 'traefik.backend=djangotemplate'
+#       - 'traefik.port=8000'
+#       - 'traefik.frontend.rule=Host:djangotemplate.docker.test'
+#   mailhog:
+#     networks:
+#       - default
+#       - pontsun
+#     labels:
+#       - 'traefik.enable=true'
+#       - 'traefik.docker.network=pontsun'
+#       - 'traefik.backend=djangotemplate_mail'
+#       - 'traefik.port=8025'
+#       - 'traefik.frontend.rule=Host:djangotemplate-mail.docker.test'
+# networks:
+#   pontsun:
+#     external:
+#       name: pontsun

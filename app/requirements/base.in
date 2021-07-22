@@ -1,0 +1,5 @@
+dj-database-url
+dj-email-url
+Django
+gunicorn
+psycopg2-binary

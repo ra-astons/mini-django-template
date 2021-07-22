@@ -1,0 +1,9 @@
+__pycache__
+*.pyc
+
+/app/static/*
+!/app/static/.gitkeep
+
+/docker-compose.override.yml
+/.env*
+!/.env*.sample

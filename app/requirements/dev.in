@@ -1,0 +1,7 @@
+-r test.in
+
+django-debug-toolbar
+django-extensions
+ipython
+pip-tools
+werkzeug
