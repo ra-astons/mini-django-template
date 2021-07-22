@@ -4,4 +4,5 @@ django-debug-toolbar
 django-extensions
 ipython
 pip-tools
+pyaml
 werkzeug
